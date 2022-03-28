@@ -9,7 +9,6 @@ import io
 
 ##### 01) Importation de la base de données
 df_dataVO = pd.read_csv('SelectedData.csv', sep=";", header=0)
-
 ### Create loaclisation Paris
 c = folium.Map(location=[48.856614, 2.3522219], zoom_start=12)
 ### Création des points d'interêts

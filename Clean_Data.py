@@ -1,11 +1,8 @@
 import pandas as pd
-from _datetime import datetime
 
 # a) Read dataset
-
 dataBrute = pd.read_csv("AllData.csv", sep=";")
 print(dataBrute)
-
 # b) Display dataset information
 print("  * * * * * * * I)  Data information * * * * * * *  ")
 print(" b1) Statistics   ")
@@ -14,13 +11,12 @@ print("______________________________________")
 print(" b2) Information (Column, Non-Null, Count, Dtype)  _  info ()  ")
 print(dataBrute.info())
 
-
 # c) Select used Data
 data_use = dataBrute[['id','sim_provider','name','location_latitude','location_longitude','status','launch_duration','trace_cellular_lte_rsrp','protocol','user_location_type','trace_cellular_bandwidth']]
 # d) Encodage
 status_values = {"status": {"FAILED": 0,
-                                        "TIMEOUT": 1,
-                                        "OK": 2
+                            "TIMEOUT": 1,
+                            "OK": 2
                                 }
                 }
 data_use = data_use.replace(status_values)
