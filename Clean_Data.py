@@ -38,9 +38,7 @@ for i in range(len(data_use)):
         data_use.loc[{i},'quality'] = "Middle Cell"
     elif data_use.trace_cellular_lte_rsrp[i] <= -100:
         data_use.loc[{i},'quality'] = "Cell Edge"
-# f) we drop the irrevelant tests (status: Failed or Timeout)
-data_use.drop(data_use.index[data_use['status'] == 0], inplace = True)
-data_use.drop(data_use.index[data_use['status'] == 1], inplace = True)
+
 # f) Export data
 print("  * * * * * * * Export DataBrut2  * * * * * * *  ")
 data_use.to_csv('SelectedData.csv', index=False, header=True, sep=";")
